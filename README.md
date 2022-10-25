@@ -25,6 +25,13 @@ Diagnostics:
 Get-Command javac, java, nvm, node, adb
 
 
+## Configure VS Shell
+~~Get-ChildItem Env:
+$instanceId=(& "c:\Program Files (x86)\Microsoft Visual Studio\Installer\vswhere.exe" -format json  | ConvertFrom-Json)[0].instanceId
+Import-Module "C:\Program Files\Microsoft Visual Studio\2022\Enterprise\Common7\Tools\Microsoft.VisualStudio.DevShell.dll"
+Enter-VsDevShell $instanceId
+
+
 ## Build
 cd android
 .\gradlew assembleDebug
